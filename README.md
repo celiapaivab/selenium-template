@@ -45,6 +45,11 @@ pytest --html=reports/report.html # Com relatório HTML
 
 ## Estrutura do projeto
 
+### `docs/`
+
+Pasta destinada a arquivos de documentação e materiais complementares do projeto.
+
+---
 
 ### `.github/workflows/`
 
