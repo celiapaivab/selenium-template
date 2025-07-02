@@ -76,6 +76,13 @@ Contém os arquivos **Gherkin (.feature)**, que descrevem cenários de teste no 
 - Cada arquivo `.feature` descreve cenários em linguagem natural (Given, When, Then).
 - Os testes em Python devem implementar os steps definidos nos `.feature`.
 
+### `pages/`
+
+Contém as classes do **Page Object Model (POM)**, padrão de design que organiza elementos e ações de cada página da aplicação em objetos Python.
+
+- Cada página ou componente importante da aplicação tem uma classe própria.
+- Isso facilita a manutenção e o reuso dos códigos que interagem com a interface.
+- Exemplo: `login_page.py` pode ter métodos para preencher usuário, senha e clicar no botão.
 
 
 ---
