@@ -45,6 +45,17 @@ pytest --html=reports/report.html # Com relatório HTML
 
 ## Estrutura do projeto
 
+- `.github/workflows/` — pipeline do GitHub Actions 
+- `features/` — arquivos Gherkin (.feature) (opcional)  
+- `pages/` — Page Objects  
+- `tests/` — scripts de teste  
+- `utils/` — fixtures e configurações  
+- `reports/` — relatórios gerados (não versionados)  
+- `requirements.txt` — dependências  
+- `.gitignore` — arquivos ignorados  
+- `README.md` — documentação 
+
+
 ### `.github/workflows/`
 
 Contém o arquivo de configuração do **GitHub Actions**, que executa os testes automaticamente em cada `push` ou `pull request` na branch `main`.
@@ -56,15 +67,15 @@ Neste template, o workflow:
 - Executa os testes com o `pytest`
 - (Opcional) Gera um relatório HTML dos testes e salva como artefato
 
+### `features/`
+
+Contém os arquivos **Gherkin (.feature)**, que descrevem cenários de teste no formato **BDD**.
+
+- Esta pasta é **opcional**
+- Instale o `pytest-bdd` no `requirements.txt`.
+- Cada arquivo `.feature` descreve cenários em linguagem natural (Given, When, Then).
+- Os testes em Python devem implementar os steps definidos nos `.feature`.
 
 
-- `features/` — arquivos Gherkin (.feature) (opcional)  
-- `pages/` — Page Objects  
-- `tests/` — scripts de teste  
-- `utils/` — fixtures e configurações  
-- `reports/` — relatórios gerados (não versionados)  
-- `requirements.txt` — dependências  
-- `.gitignore` — arquivos ignorados  
-- `README.md` — documentação  
 
 ---
