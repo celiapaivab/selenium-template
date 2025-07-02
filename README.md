@@ -45,15 +45,6 @@ pytest --html=reports/report.html # Com relatório HTML
 
 ## Estrutura do projeto
 
-- `.github/workflows/` — pipeline do GitHub Actions 
-- `features/` — arquivos Gherkin (.feature) (opcional)  
-- `pages/` — Page Objects  
-- `reports/` — relatórios gerados (não versionados)  
-- `tests/` — scripts de teste  
-- `utils/` — fixtures e configurações 
-- `.gitignore` — arquivos ignorados  
-- `README.md` — documentação 
-- `requirements.txt` — dependências  
 
 ### `.github/workflows/`
 
@@ -66,6 +57,8 @@ Neste template, o workflow:
 - Executa os testes com o `pytest`
 - (Opcional) Gera um relatório HTML dos testes e salva como artefato
 
+---
+
 ### `features/`
 
 Contém os arquivos **Gherkin (.feature)**, que descrevem cenários de teste no formato **BDD**.
@@ -75,6 +68,8 @@ Contém os arquivos **Gherkin (.feature)**, que descrevem cenários de teste no 
 - Cada arquivo `.feature` descreve cenários em linguagem natural (Given, When, Then).
 - Os testes em Python devem implementar os steps definidos nos `.feature`.
 
+---
+
 ### `pages/`
 
 Contém as classes do **Page Object Model (POM)**, padrão de design que organiza elementos e ações de cada página da aplicação em objetos Python.
@@ -82,6 +77,8 @@ Contém as classes do **Page Object Model (POM)**, padrão de design que organiz
 - Cada página ou componente importante da aplicação tem uma classe própria.
 - Isso facilita a manutenção e o reuso dos códigos que interagem com a interface.
 - Exemplo: `login_page.py` pode ter métodos para preencher usuário, senha e clicar no botão.
+
+---
 
 ### `reports/`
 
@@ -95,6 +92,8 @@ Esta pasta armazena os relatórios gerados pelos testes, como os relatórios HTM
 - Os relatórios ajudam a visualizar os resultados dos testes, com detalhes sobre testes que passaram, falharam, tempos e erros.
 - No pipeline do GitHub Actions, esses relatórios são salvos como artefatos para consulta posterior.
 
+---
+
 ### `tests/`
 
 Esta pasta contém os scripts de teste automatizados que usam o framework **pytest** para executar as verificações.
@@ -104,6 +103,8 @@ Esta pasta contém os scripts de teste automatizados que usam o framework **pyte
 - Caso use BDD com `pytest-bdd`, esta pasta também conterá as definições dos steps (funções que implementam as ações descritas nos arquivos `.feature`).
 - Exemplo: um teste de login simples que utiliza o Page Object `LoginPage`.
 
+---
+
 ### `utils/`
 
 Esta pasta armazena **configurações e utilitários** para os testes automatizados.
@@ -111,5 +112,36 @@ Esta pasta armazena **configurações e utilitários** para os testes automatiza
 - **`conftest.py`** — Define **fixtures** compartilhadas para preparar o ambiente de teste, como criar e encerrar o WebDriver (navegador).  
 - **`data.py`** — Centraliza informações fixas do projeto (constantes).
 
+---
+
+### `.gitignore`
+
+Arquivo que lista os arquivos e pastas que o Git deve **ignorar** e não versionar no repositório.  
+Exemplos comuns no projeto:
+- Pastas de ambiente virtual (`venv/`)  
+- Arquivos de cache do Python (`__pycache__/`)  
+- Pastas com relatórios gerados (`reports/`)   
+
+---
+
+### `README.md`
+
+Arquivo de documentação principal do projeto, que contém informações importantes para quem for usar ou contribuir no repositório.  
+Neste template, o README explica:  
+- Como iniciar e usar o projeto  
+- Estrutura das pastas  
+- Detalhes sobre as configurações e testes  
+
+---
+
+### `requirements.txt`
+
+Arquivo que lista todas as **dependências Python** necessárias para rodar os testes.  
+Ao executar:  
+```bash
+pip install -r requirements.txt
+```
+
+o ambiente virtual instala todas as bibliotecas necessárias automaticamente, garantindo que o projeto funcione corretamente.
 
 ---
