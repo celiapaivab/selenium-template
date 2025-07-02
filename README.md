@@ -1,4 +1,4 @@
-# 🚀 Selenium Template
+# Selenium Template
 
 Este repositório é um template base para automação de testes com Selenium e Pytest, com suporte para:
 
@@ -103,6 +103,13 @@ Esta pasta contém os scripts de teste automatizados que usam o framework **pyte
 - Os testes devem ser escritos em funções ou classes seguindo as convenções do pytest.
 - Caso use BDD com `pytest-bdd`, esta pasta também conterá as definições dos steps (funções que implementam as ações descritas nos arquivos `.feature`).
 - Exemplo: um teste de login simples que utiliza o Page Object `LoginPage`.
+
+### `utils/`
+
+Esta pasta armazena **configurações e utilitários** para os testes automatizados.
+
+- **`conftest.py`** — Define **fixtures** compartilhadas para preparar o ambiente de teste, como criar e encerrar o WebDriver (navegador).  
+- **`data.py`** — Centraliza informações fixas do projeto (constantes).
 
 
 ---
