@@ -48,13 +48,12 @@ pytest --html=reports/report.html # Com relatório HTML
 - `.github/workflows/` — pipeline do GitHub Actions 
 - `features/` — arquivos Gherkin (.feature) (opcional)  
 - `pages/` — Page Objects  
-- `tests/` — scripts de teste  
-- `utils/` — fixtures e configurações  
 - `reports/` — relatórios gerados (não versionados)  
-- `requirements.txt` — dependências  
+- `tests/` — scripts de teste  
+- `utils/` — fixtures e configurações 
 - `.gitignore` — arquivos ignorados  
 - `README.md` — documentação 
-
+- `requirements.txt` — dependências  
 
 ### `.github/workflows/`
 
@@ -83,6 +82,27 @@ Contém as classes do **Page Object Model (POM)**, padrão de design que organiz
 - Cada página ou componente importante da aplicação tem uma classe própria.
 - Isso facilita a manutenção e o reuso dos códigos que interagem com a interface.
 - Exemplo: `login_page.py` pode ter métodos para preencher usuário, senha e clicar no botão.
+
+### `reports/`
+
+Esta pasta armazena os relatórios gerados pelos testes, como os relatórios HTML criados pelo `pytest-html`.
+
+- Os relatórios são **gerados automaticamente** durante a execução dos testes com o comando:
+  ```bash
+  pytest --html=reports/report.html
+  ```
+- A pasta reports/ deve estar incluída no .gitignore.
+- Os relatórios ajudam a visualizar os resultados dos testes, com detalhes sobre testes que passaram, falharam, tempos e erros.
+- No pipeline do GitHub Actions, esses relatórios são salvos como artefatos para consulta posterior.
+
+### `tests/`
+
+Esta pasta contém os scripts de teste automatizados que usam o framework **pytest** para executar as verificações.
+
+- Aqui ficam os testes que interagem com a aplicação por meio dos **Page Objects** definidos em `pages/`.
+- Os testes devem ser escritos em funções ou classes seguindo as convenções do pytest.
+- Caso use BDD com `pytest-bdd`, esta pasta também conterá as definições dos steps (funções que implementam as ações descritas nos arquivos `.feature`).
+- Exemplo: um teste de login simples que utiliza o Page Object `LoginPage`.
 
 
 ---
