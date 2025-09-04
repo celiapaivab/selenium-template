@@ -1,6 +1,6 @@
-# URL base da aplicação
-BASE_URL = "https://seu-site-de-teste.com"
+# Base URL of the application
+BASE_URL = "https://example.com"  # replace with your test site
 
-# Credenciais de exemplo
-USERNAME = "usuario_teste"
-PASSWORD = "senha123"
+# Example credentials
+USERNAME = "test_user"
+PASSWORD = "test_pass"

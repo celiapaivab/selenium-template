@@ -7,13 +7,28 @@ class LoginPage:
         self.password_input = (By.ID, "password")
         self.login_button = (By.ID, "loginBtn")
 
+    # Open the login page
+    def open(self, url):
+        self.driver.get(url)
+
+    # Enter the username
     def enter_username(self, username):
-        self.driver.find_element(*self.username_input).clear()
-        self.driver.find_element(*self.username_input).send_keys(username)
+        element = self.driver.find_element(*self.username_input)
+        element.clear()
+        element.send_keys(username)
 
+    # Enter the password
     def enter_password(self, password):
-        self.driver.find_element(*self.password_input).clear()
-        self.driver.find_element(*self.password_input).send_keys(password)
+        element = self.driver.find_element(*self.password_input)
+        element.clear()
+        element.send_keys(password)
 
+    # Click the login button
     def click_login(self):
         self.driver.find_element(*self.login_button).click()
+
+    # Combine username, password, and click login
+    def login(self, username, password):
+        self.enter_username(username)
+        self.enter_password(password)
+        self.click_login()

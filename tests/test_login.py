@@ -1,12 +1,16 @@
 from pages.login_page import LoginPage
-from utils import data
+from utils.data import BASE_URL, USERNAME, PASSWORD
 
-def test_login_sucesso(driver):
-    driver.get(data.BASE_URL)
+
+def test_login_success(driver):
+    # Initialize the login page object
     login_page = LoginPage(driver)
 
-    login_page.enter_username(data.USERNAME)
-    login_page.enter_password(data.PASSWORD)
-    login_page.click_login()
+    # Open the login page
+    login_page.open(BASE_URL)
 
-    assert "Página Inicial" in driver.title
+    # Enter username and password, then click login
+    login_page.login(USERNAME, PASSWORD)
+
+    # Verify that login was successful by checking the page title
+    assert "Home Page" in driver.title

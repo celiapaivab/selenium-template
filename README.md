@@ -5,7 +5,6 @@ Este repositório é um template base para automação de testes com Selenium e 
 - Estrutura modular (Page Object Model)
 - Pipeline CI/CD com GitHub Actions
 - Relatórios HTML (opcional)
-- Testes BDD com Gherkin (opcional)
 
 
 ---
@@ -64,17 +63,6 @@ Neste template, o workflow:
 
 ---
 
-### `features/`
-
-Contém os arquivos **Gherkin (.feature)**, que descrevem cenários de teste no formato **BDD**.
-
-- Esta pasta é **opcional**
-- Instale o `pytest-bdd` no `requirements.txt`.
-- Cada arquivo `.feature` descreve cenários em linguagem natural (Given, When, Then).
-- Os testes em Python devem implementar os steps definidos nos `.feature`.
-
----
-
 ### `pages/`
 
 Contém as classes do **Page Object Model (POM)**, padrão de design que organiza elementos e ações de cada página da aplicação em objetos Python.
@@ -105,7 +93,6 @@ Esta pasta contém os scripts de teste automatizados que usam o framework **pyte
 
 - Aqui ficam os testes que interagem com a aplicação por meio dos **Page Objects** definidos em `pages/`.
 - Os testes devem ser escritos em funções ou classes seguindo as convenções do pytest.
-- Caso use BDD com `pytest-bdd`, esta pasta também conterá as definições dos steps (funções que implementam as ações descritas nos arquivos `.feature`).
 - Exemplo: um teste de login simples que utiliza o Page Object `LoginPage`.
 
 ---
@@ -147,6 +134,6 @@ Ao executar:
 pip install -r requirements.txt
 ```
 
-o ambiente virtual instala todas as bibliotecas necessárias automaticamente, garantindo que o projeto funcione corretamente.
+O ambiente virtual instala todas as bibliotecas necessárias automaticamente, garantindo que o projeto funcione corretamente.
 
 ---
